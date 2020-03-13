@@ -1,0 +1,38 @@
+Polling Compiler
+
+-top 10 candidates based on custom weighted combined polls
+-using api websites like pollster has an api
+
+-info / news on each candidate upon click/hover over candidate
+
+-slider for left/ right that changes the weights for the poll sources. 
+	I.e. 1.4cnn + 0.3foxnews could be the left side, and 0.1cnn + 4.0foxnews could be right side
+
+-start as java app, then put on server
+
+-collect history of poll results over time and create history 
+
+
+-future improvement is changing from automatic to manual 
+
+-hover over feature that has limited info, and then click leads to ranked news
+
+Pros:
+-Easily modular
+
+Roadblock:
+-how to make it a website?
+	-atlantis package?
+	-github Pages
+	-third party pages
+	-html
+
+	-Solution: do a desktop app
+-how to handle votes with less candidates or more
+
+
+Initial assignments: DUE next Friday, meet at same time
+-Luna will decide whether it is a desktop app or a server
+-Raj will find news api and use that info to sort articles and weigh news
+-Rohan will help Zach, 
+-Zach will think about polling
