@@ -7,9 +7,9 @@ Project Votify is an endeavor to create a desktop application which will allow n
 * Rajesh Sakhamuru - rajes95 - Alternate Customer Representative
 * Zach Rooney - rooneyz
 * Rohan Subramaniam - subraman22
-# Website
-https://pages.github.ccs.neu.edu/2020SPCS5500SV/project-Votify/ 
 # Project Repository
 * docs - GitHub pages website HTML code
 * planning - meeting notes and ToDo lists for project
 * src - Source code for application
+# Website
+https://pages.github.ccs.neu.edu/2020SPCS5500SV/project-Votify/ 
