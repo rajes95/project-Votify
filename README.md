@@ -13,3 +13,7 @@ Project Votify is an endeavor to create a desktop application which will allow n
 * src - Source code for application
 # Website
 https://pages.github.ccs.neu.edu/2020SPCS5500SV/project-Votify/ 
+# Folder Info
+* docs - folder containing the project documentation including the website index.html and images used for website
+* planning - folder used by members to keep notes and project plans
+* src - folder for app files including main code
