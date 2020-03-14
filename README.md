@@ -9,11 +9,7 @@ As of now, Votify is focused on the Democratic Primary Election, but will eventu
 * Rajesh Sakhamuru - rajes95 - Alternate Customer Representative
 * Zach Rooney - rooneyz
 * Rohan Subramaniam - subraman22
-# Project Repository
-* docs - GitHub pages website HTML code
-* planning - meeting notes and ToDo lists for project
-* src - Source code for application
-# Folder Info
+# Repository Folder Information
 * docs - folder containing the project documentation including the website index.html and images used for website
 * planning - folder used by members to keep notes and project plans
 * src - folder for app files including main code
