@@ -7,7 +7,7 @@ As of now, Votify is focused on the Democratic Primary Election, but will eventu
 # Team Members
 * Luna Szymanski - luna - Primary Customer Representative
 * Rajesh Sakhamuru - rajes95 - Alternate Customer Representative
-* Zach Rooney - rooneyz
+* Zachary Rooney - rooneyz
 * Rohan Subramaniam - subraman22
 # Repository Folder Information
 * docs - folder containing the project documentation including the website index.html and images used for website
