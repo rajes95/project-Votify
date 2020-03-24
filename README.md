@@ -15,3 +15,5 @@ As of now, Votify is focused on the Democratic Primary Election, but will eventu
 * src - folder for app files including main code
 # Website
 https://pages.github.ccs.neu.edu/2020SPCS5500SV/project-Votify/ 
+# Communication Plan
+* Found in docs folder
