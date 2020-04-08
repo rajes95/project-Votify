@@ -14,6 +14,10 @@
           <option name="url" value="https://github.com/kenolson/SampleFX.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.ccs.neu.edu/2020SPCS5500SV/project-Votify.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/Downloads" />
