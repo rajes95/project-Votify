@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <VBox fx:id="sideMenu" alignment="CENTER" layoutX="24.0" layoutY="110.0" prefHeight="200.0" prefWidth="137.0">
+      <padding>
+         <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+      </padding>
+      <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeClick" prefHeight="27.0" prefWidth="142.0" text="Home">
+         <VBox.margin>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="pollButton" mnemonicParsing="false" onAction="#pollClick" prefHeight="28.0" prefWidth="135.0" text="Latest Polls">
+         <VBox.margin>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="newsButton" mnemonicParsing="false" onAction="#newsClick" prefHeight="27.0" prefWidth="139.0" text="News">
+         <VBox.margin>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </VBox.margin>
+      </Button>
+   </VBox>
+   <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="233.0" layoutY="14.0" prefHeight="27.0" prefWidth="134.0" text="Votify" textAlignment="CENTER">
+      <font>
+         <Font name="Chalkboard SE Light" size="29.0" />
+      </font>
+   </Label>
+   <Label fx:id="welcomeLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="153.0" prefHeight="114.0" prefWidth="286.0" text="Welcome message here" />
+   <ComboBox fx:id="electionMenu" layoutX="194.0" layoutY="297.0" prefHeight="27.0" prefWidth="250.0" promptText="Choose Election" visibleRowCount="3" />
+   <ImageView fx:id="canidateImage" fitHeight="84.0" fitWidth="112.0" layoutX="165.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../images/canidate-2.jpg" />
+   </ImageView>
+   <ImageView fx:id="ballotImage" fitHeight="78.0" fitWidth="84.0" layoutX="300.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../../images/greenform-2.png" />
+   </ImageView>
+</AnchorPane>
