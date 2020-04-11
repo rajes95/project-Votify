@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.NewsController">
+    <VBox fx:id="sideMenu" alignment="CENTER" layoutX="24.0" layoutY="119.0" prefHeight="200.0" prefWidth="137.0">
+        <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+        </padding>
+        <Button fx:id="homeButton" mnemonicParsing="false" onAction="#homeClick" prefHeight="27.0" prefWidth="142.0" text="Home">
+            <VBox.margin>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </VBox.margin>
+        </Button>
+        <Button fx:id="pollButton" mnemonicParsing="false" onAction="#pollClick" prefHeight="28.0" prefWidth="135.0" text="Latest Polls">
+            <VBox.margin>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </VBox.margin>
+        </Button>
+        <Button fx:id="newsButton" mnemonicParsing="false" onAction="#newsClick" prefHeight="27.0" prefWidth="139.0" text="News">
+            <VBox.margin>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </VBox.margin>
+        </Button>
+    </VBox>
+   <Button fx:id="toggleWebView" layoutX="32.0" layoutY="41.0" mnemonicParsing="false" onMouseClicked="#toggleWebview" prefHeight="28.0" prefWidth="119.0" text="Toggle WebView" />
+   <ImageView fx:id="bidenImage" fitHeight="88.0" fitWidth="83.0" layoutX="184.0" layoutY="20.0" onMouseClicked="#loadBidenNews" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../images/joe-biden.jpg" />
+      </image>
+   </ImageView>
+   <ImageView fx:id="trumpImage" fitHeight="88.0" fitWidth="94.0" layoutX="272.0" layoutY="20.0" onMouseClicked="#loadTrumpNews" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../images/trump.png" />
+      </image>
+   </ImageView>
+   <ScrollPane fx:id="scrollNews" layoutX="164.0" layoutY="108.0" prefHeight="277.0" prefWidth="422.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="108.0">
+      <content>
+         <ImageView fx:id="news1" fitHeight="81.0" fitWidth="190.0" onMouseClicked="#openNews1" pickOnBounds="true" preserveRatio="true" />
+      </content>
+   </ScrollPane>
+   <WebView fx:id="newsWebView" layoutX="163.0" layoutY="14.0" prefHeight="367.0" prefWidth="422.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0" />
+</AnchorPane>

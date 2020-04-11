@@ -1,0 +1,8 @@
+
+.anchor{ -fx-background-image: url('flag.jpg');
+}
+
+.bodybg{
+     -fx-background-image: url('flag.jpg');
+     -fx-background-size: 100% 100%;
+    }

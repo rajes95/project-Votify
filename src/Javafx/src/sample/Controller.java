@@ -1,7 +1,6 @@
 package sample;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -11,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 //import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -45,7 +43,7 @@ public class Controller implements Initializable
     public void homeClick(ActionEvent actionEvent) throws IOException {
 
 
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("homePage.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //This line gets the Stage information
@@ -69,6 +67,15 @@ public class Controller implements Initializable
     }
 
 
-    public void newsClick(ActionEvent actionEvent) {
+    public void newsClick(ActionEvent actionEvent) throws IOException {
+
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("newsPage.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+
+        //This line gets the Stage information
+        Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+
+        window.setScene(tableViewScene);
+        window.show();
     }
 }
