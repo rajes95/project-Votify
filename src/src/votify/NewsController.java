@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -33,8 +35,7 @@ public class NewsController implements Initializable {
     public WebView newsWebView;
     public Button toggleWebView;
 
-    public ImageView trumpImage;
-    public ImageView bidenImage;
+    public Label newsTitle;
 
     public ImageView news00;
     public ImageView news01;
@@ -56,8 +57,29 @@ public class NewsController implements Initializable {
     public ImageView news17;
     public ImageView news18;
     public ImageView news19;
+    public Label label00;
+    public Label label01;
+    public Label label02;
+    public Label label03;
+    public Label label04;
+    public Label label05;
+    public Label label06;
+    public Label label07;
+    public Label label08;
+    public Label label09;
+    public Label label10;
+    public Label label11;
+    public Label label12;
+    public Label label13;
+    public Label label14;
+    public Label label15;
+    public Label label16;
+    public Label label17;
+    public Label label18;
+    public Label label19;
 
     private ImageView[] newsButtons = new ImageView[20];
+    private Label[] newsLabels = new Label[20];
 
     private newsApiJson generalElection = null;
     private newsApiJson joeBiden = null;
@@ -128,6 +150,26 @@ public class NewsController implements Initializable {
         newsButtons[17] = news17;
         newsButtons[18] = news18;
         newsButtons[19] = news19;
+        newsLabels[0] = label00;
+        newsLabels[1] = label01;
+        newsLabels[2] = label02;
+        newsLabels[3] = label03;
+        newsLabels[4] = label04;
+        newsLabels[5] = label05;
+        newsLabels[6] = label06;
+        newsLabels[7] = label07;
+        newsLabels[8] = label08;
+        newsLabels[9] = label09;
+        newsLabels[10] = label10;
+        newsLabels[11] = label11;
+        newsLabels[12] = label12;
+        newsLabels[13] = label13;
+        newsLabels[14] = label14;
+        newsLabels[15] = label15;
+        newsLabels[16] = label16;
+        newsLabels[17] = label17;
+        newsLabels[18] = label18;
+        newsLabels[19] = label19;
     }
 
     private void updateNews()
@@ -137,18 +179,18 @@ public class NewsController implements Initializable {
             if (currentJSON.getImgURL(i) != null)
             {
                 newsButtons[i].setImage(new Image(currentJSON.getImgURL(i)));
+                newsLabels[i].setText(currentJSON.getSource(i)+": "+currentJSON.getTitle(i));
+                newsLabels[i].setWrapText(true);
+                newsLabels[i].setContentDisplay(ContentDisplay.TOP);
+                newsLabels[i].setGraphic(newsButtons[i]);
             }
         }
-
-
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         newsWebView.setVisible(false);
-
-        // ToDo: set 20 images. refresh 20 images. per candidate. sorting by bias
-
+        //ToDo: sorting by bias
         try {
             generalElection = new newsApiJson("USA+Presidential+Primary+2020");
             joeBiden = new newsApiJson("Joe+Biden+2020");
@@ -178,38 +220,47 @@ public class NewsController implements Initializable {
     }
 
     public void loadGeneralNews(MouseEvent mouseEvent) {
-        currentJSON = generalElection;
-        updateNews();
-        updateNews();
+
+        if (currentJSON != generalElection)
+        {
+            newsTitle.setText("General Presidential Election News 2020");
+            currentJSON = generalElection;
+            updateNews();
+        }
     }
 
 
     public void loadBidenNews(MouseEvent mouseEvent)
     {
-        currentJSON = joeBiden;
-        updateNews();
+        if (currentJSON != joeBiden)
+        {
+            newsTitle.setText("Joe Biden Election News 2020");
+            currentJSON = joeBiden;
+            updateNews();
+        }
     }
 
     public void loadTrumpNews(MouseEvent mouseEvent)
     {
-        currentJSON = donaldTrump;
-        updateNews();
+        if (currentJSON != donaldTrump)
+        {
+            newsTitle.setText("Donald Trump Election News 2020");
+            currentJSON = donaldTrump;
+            updateNews();
+        }
+
     }
 
-
-    public void openNews00(MouseEvent mouseEvent) {
+    public void openLabel00(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(0) != null)
         {
             engine.load(currentJSON.getURL(0));
         }
-
     }
 
-
-    public void openNews01(MouseEvent mouseEvent) {
-
+    public void openLabel01(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(1) != null)
@@ -218,9 +269,7 @@ public class NewsController implements Initializable {
         }
     }
 
-
-
-    public void openNews02(MouseEvent mouseEvent) {
+    public void openLabel02(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(2) != null)
@@ -229,7 +278,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews03(MouseEvent mouseEvent) {
+    public void openLabel03(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(3) != null)
@@ -238,7 +287,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews04(MouseEvent mouseEvent) {
+    public void openLabel04(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(4) != null)
@@ -247,7 +296,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews05(MouseEvent mouseEvent) {
+    public void openLabel05(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(5) != null)
@@ -256,7 +305,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews06(MouseEvent mouseEvent) {
+    public void openLabel06(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(6) != null)
@@ -265,7 +314,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews07(MouseEvent mouseEvent) {
+    public void openLabel07(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(7) != null)
@@ -274,7 +323,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews08(MouseEvent mouseEvent) {
+    public void openLabel08(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(8) != null)
@@ -283,7 +332,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews09(MouseEvent mouseEvent) {
+    public void openLabel09(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(9) != null)
@@ -292,7 +341,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews10(MouseEvent mouseEvent) {
+    public void openLabel10(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(10) != null)
@@ -301,7 +350,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews11(MouseEvent mouseEvent) {
+    public void openLabel11(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(11) != null)
@@ -310,7 +359,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews12(MouseEvent mouseEvent) {
+    public void openLabel12(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(12) != null)
@@ -319,7 +368,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews13(MouseEvent mouseEvent) {
+    public void openLabel13(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(13) != null)
@@ -328,7 +377,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews14(MouseEvent mouseEvent) {
+    public void openLabel14(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(14) != null)
@@ -337,7 +386,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews15(MouseEvent mouseEvent) {
+    public void openLabel15(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(15) != null)
@@ -346,7 +395,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews16(MouseEvent mouseEvent) {
+    public void openLabel16(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(16) != null)
@@ -355,7 +404,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews17(MouseEvent mouseEvent) {
+    public void openLabel17(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(17) != null)
@@ -364,7 +413,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews18(MouseEvent mouseEvent) {
+    public void openLabel18(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(18) != null)
@@ -373,7 +422,7 @@ public class NewsController implements Initializable {
         }
     }
 
-    public void openNews19(MouseEvent mouseEvent) {
+    public void openLabel19(MouseEvent mouseEvent) {
         newsWebView.setVisible(true);
         WebEngine engine = newsWebView.getEngine();
         if (currentJSON.getImgURL(19) != null)
@@ -381,6 +430,4 @@ public class NewsController implements Initializable {
             engine.load(currentJSON.getURL(19));
         }
     }
-
-
 }

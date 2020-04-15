@@ -40,8 +40,7 @@ public class newsApiJson
 	private String[] urlArray = null;
 	private String[] imgURLArray = null;
 	private String[] titleArray = null;
-	private String[] descriptionArray = null;
-	private String[] authorArray = null;
+	private String[] source = null;
 
 	public String getURL(int index)
 	{
@@ -58,14 +57,9 @@ public class newsApiJson
 		return titleArray[index];
 	}
 
-	public String getDescription(int index)
+	public String getSource(int index)
 	{
-		return descriptionArray[index];
-	}
-
-	public String getAuthor(int index)
-	{
-		return authorArray[index];
+		return source[index];
 	}
 
 	public newsApiJson(String searchTerm) throws IOException, JSONException
@@ -92,8 +86,7 @@ public class newsApiJson
 		imgURLArray = new String[jsonArr.length()];
 		urlArray = new String[jsonArr.length()];
 		titleArray = new String[jsonArr.length()];
-		descriptionArray = new String[jsonArr.length()];
-		authorArray = new String[jsonArr.length()];
+		source = new String[jsonArr.length()];
 
 		for(int i = 0; i < jsonArr.length(); i++)
 		{
@@ -114,14 +107,13 @@ public class newsApiJson
 				titleArray[i] = (String) article.get("title");
 			}
 
-			if(article.get("description") != org.json.JSONObject.NULL)
+			if(article.get("source") != org.json.JSONObject.NULL)
 			{
-				descriptionArray[i] = (String) article.get("description");
-			}
-
-			if(article.get("author") != org.json.JSONObject.NULL)
-			{
-				authorArray[i] = (String) article.get("author");
+				JSONObject sourceObj = article.getJSONObject("source");
+				if(sourceObj.get("name") != org.json.JSONObject.NULL)
+				{
+					source[i] = sourceObj.getString("name");
+				}
 			}
 		}
 	}
@@ -138,7 +130,7 @@ public class newsApiJson
 		return sb.toString();
 	}
 
-	public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException
+	private static JSONObject readJsonFromUrl(String url) throws IOException, JSONException
 	{
 		InputStream is = new URL(url).openStream();
 		try
