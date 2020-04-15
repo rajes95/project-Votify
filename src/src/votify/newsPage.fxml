@@ -4,6 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="votify.NewsController">
@@ -28,17 +29,17 @@
         </Button>
     </VBox>
    <Button fx:id="toggleWebView" layoutX="32.0" layoutY="41.0" mnemonicParsing="false" onMouseClicked="#toggleWebview" prefHeight="28.0" prefWidth="119.0" text="Toggle WebView" />
-   <ImageView fx:id="bidenImage" fitHeight="88.0" fitWidth="83.0" layoutX="260.0" layoutY="20.0" onMouseClicked="#loadBidenNews" pickOnBounds="true" preserveRatio="true">
+   <ImageView fitHeight="88.0" fitWidth="83.0" layoutX="260.0" layoutY="20.0" onMouseClicked="#loadBidenNews" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../images/joe-biden.jpg" />
       </image>
    </ImageView>
-   <ImageView fx:id="trumpImage" fitHeight="88.0" fitWidth="94.0" layoutX="340.0" layoutY="20.0" onMouseClicked="#loadTrumpNews" pickOnBounds="true" preserveRatio="true">
+   <ImageView fitHeight="88.0" fitWidth="94.0" layoutX="340.0" layoutY="20.0" onMouseClicked="#loadTrumpNews" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../images/trump.png" />
       </image>
    </ImageView>
-   <ImageView fx:id="newsImage" fitHeight="96.0" fitWidth="95.0" layoutX="161.0" layoutY="17.0" onMouseClicked="#loadGeneralNews" pickOnBounds="true" preserveRatio="true">
+   <ImageView fitHeight="96.0" fitWidth="95.0" layoutX="161.0" layoutY="17.0" onMouseClicked="#loadGeneralNews" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@../images/general_election_2020.png" />
       </image>
@@ -47,30 +48,55 @@
       <content>
          <FlowPane prefHeight="275.0" prefWidth="422.0">
             <children>
+               <Label fx:id="label00" layoutX="418.0" layoutY="10.0" onMouseClicked="#openLabel00" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label01" layoutX="214.0" layoutY="10.0" onMouseClicked="#openLabel01" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label02" onMouseClicked="#openLabel02" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label03" layoutX="10.0" layoutY="10.0" onMouseClicked="#openLabel03" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label04" layoutX="622.0" layoutY="10.0" onMouseClicked="#openLabel04" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label05" layoutX="10.0" layoutY="181.0" onMouseClicked="#openLabel05" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label06" layoutX="214.0" layoutY="181.0" onMouseClicked="#openLabel06" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label07" layoutX="10.0" layoutY="898.0" onMouseClicked="#openLabel07" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label08" layoutX="622.0" layoutY="181.0" onMouseClicked="#openLabel08" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label09" layoutX="622.0" layoutY="181.0" onMouseClicked="#openLabel09" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label10" layoutX="622.0" layoutY="181.0" onMouseClicked="#openLabel10" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label11" layoutX="418.0" layoutY="181.0" onMouseClicked="#openLabel11" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label12" layoutX="622.0" layoutY="181.0" onMouseClicked="#openLabel12" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label13" layoutX="418.0" layoutY="181.0" onMouseClicked="#openLabel13" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label14" layoutX="418.0" layoutY="181.0" onMouseClicked="#openLabel14" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label15" layoutX="418.0" layoutY="352.0" onMouseClicked="#openLabel15" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label16" layoutX="622.0" layoutY="352.0" onMouseClicked="#openLabel16" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label17" layoutX="10.0" layoutY="523.0" onMouseClicked="#openLabel17" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label18" layoutX="214.0" layoutY="523.0" onMouseClicked="#openLabel18" prefHeight="171.0" prefWidth="204.0" />
+               <Label fx:id="label19" layoutX="418.0" layoutY="523.0" onMouseClicked="#openLabel19" prefHeight="171.0" prefWidth="204.0" />
                <ImageView fitHeight="1.0" fitWidth="851.0" layoutX="220.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" />
-               <ImageView fx:id="news00" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="10.0" onMouseClicked="#openNews00" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news01" fitHeight="109.0" fitWidth="210.0" layoutX="430.0" layoutY="10.0" onMouseClicked="#openNews01" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news02" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#openNews02" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news03" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#openNews03" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news04" fitHeight="109.0" fitWidth="210.0" onMouseClicked="#openNews04" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news05" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="119.0" onMouseClicked="#openNews05" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news06" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="119.0" onMouseClicked="#openNews06" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news07" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="228.0" onMouseClicked="#openNews07" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news08" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="337.0" onMouseClicked="#openNews08" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news09" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="228.0" onMouseClicked="#openNews09" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news10" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="232.0" onMouseClicked="#openNews10" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news11" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="232.0" onMouseClicked="#openNews11" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news12" fitHeight="109.0" fitWidth="210.0" layoutX="430.0" layoutY="232.0" onMouseClicked="#openNews12" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news13" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="341.0" onMouseClicked="#openNews13" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news14" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="341.0" onMouseClicked="#openNews14" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news15" fitHeight="109.0" fitWidth="210.0" layoutX="430.0" layoutY="341.0" onMouseClicked="#openNews15" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news16" fitHeight="109.0" fitWidth="210.0" layoutX="640.0" layoutY="341.0" onMouseClicked="#openNews16" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news17" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="450.0" onMouseClicked="#openNews17" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news18" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="450.0" onMouseClicked="#openNews18" pickOnBounds="true" preserveRatio="false" />
-               <ImageView fx:id="news19" fitHeight="109.0" fitWidth="210.0" layoutX="430.0" layoutY="450.0" onMouseClicked="#openNews19" pickOnBounds="true" preserveRatio="false" />
+               <ImageView fx:id="news00" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="10.0" pickOnBounds="true" />
+               <ImageView fx:id="news01" fitHeight="109.0" fitWidth="210.0" layoutX="430.0" layoutY="10.0" pickOnBounds="true" />
+               <ImageView fx:id="news02" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" />
+               <ImageView fx:id="news03" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" />
+               <ImageView fx:id="news04" fitHeight="109.0" fitWidth="210.0" pickOnBounds="true" />
+               <ImageView fx:id="news12" fitHeight="109.0" fitWidth="210.0" layoutX="430.0" layoutY="232.0" pickOnBounds="true" />
+               <ImageView fx:id="news05" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="119.0" pickOnBounds="true" />
+               <ImageView fx:id="news06" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="119.0" pickOnBounds="true" />
+               <ImageView fx:id="news07" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="228.0" pickOnBounds="true" />
+               <ImageView fx:id="news08" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="337.0" pickOnBounds="true" />
+               <ImageView fx:id="news09" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="228.0" pickOnBounds="true" />
+               <ImageView fx:id="news10" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="232.0" pickOnBounds="true" />
+               <ImageView fx:id="news11" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="232.0" pickOnBounds="true" />
+               <ImageView fx:id="news13" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="341.0" pickOnBounds="true" />
+               <ImageView fx:id="news14" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="341.0" pickOnBounds="true" />
+               <ImageView fx:id="news15" fitHeight="109.0" fitWidth="210.0" layoutX="430.0" layoutY="341.0" pickOnBounds="true" />
+               <ImageView fx:id="news16" fitHeight="109.0" fitWidth="210.0" layoutX="640.0" layoutY="341.0" pickOnBounds="true" />
+               <ImageView fx:id="news17" fitHeight="109.0" fitWidth="210.0" layoutX="10.0" layoutY="450.0" pickOnBounds="true" />
+               <ImageView fx:id="news18" fitHeight="109.0" fitWidth="210.0" layoutX="220.0" layoutY="450.0" pickOnBounds="true" />
+               <ImageView fx:id="news19" fitHeight="109.0" fitWidth="210.0" layoutX="430.0" layoutY="450.0" pickOnBounds="true" />
             </children>
          </FlowPane>
       </content>
    </ScrollPane>
+   <Label fx:id="newsTitle" contentDisplay="TEXT_ONLY" layoutX="437.0" layoutY="26.0" prefHeight="74.0" prefWidth="151.0" text="General Presidential Election News 2020" textAlignment="CENTER" textFill="#1a0354" textOverrun="CLIP" underline="true" wrapText="true" AnchorPane.leftAnchor="437.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="26.0">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
    <WebView fx:id="newsWebView" layoutX="163.0" layoutY="14.0" onMouseClicked="#loadGeneralNews" prefHeight="381.0" prefWidth="430.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="14.0" />
 </AnchorPane>
