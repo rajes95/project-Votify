@@ -185,6 +185,13 @@ public class NewsController implements Initializable {
                 newsLabels[i].setContentDisplay(ContentDisplay.TOP);
                 newsLabels[i].setGraphic(newsButtons[i]);
             }
+            else if (currentJSON.getTitle(i) != null)
+            {
+                newsLabels[i].setVisible(true);
+                newsLabels[i].setText(currentJSON.getSource(i)+": "+currentJSON.getTitle(i));
+                newsLabels[i].setWrapText(true);
+                newsLabels[i].setContentDisplay(ContentDisplay.TEXT_ONLY);
+            }
             else
             {
                 newsLabels[i].setVisible(false);
@@ -197,15 +204,14 @@ public class NewsController implements Initializable {
         newsWebView.setVisible(false);
         //ToDo: sorting by bias
         try {
-            generalElection = new newsApiJson("USA+Presidential+Primary+2020");
+            generalElection = new newsApiJson("American+Presidential+Election");
             joeBiden = new newsApiJson("Joe+Biden+2020");
             donaldTrump = new newsApiJson("Donald+Trump+2020");
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
+
         initializeNewsButtonsArray();
 
         currentJSON = generalElection;
@@ -257,7 +263,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel00(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(0) != null)
+        if (currentJSON.getURL(0) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -266,7 +272,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel01(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(1) != null)
+        if (currentJSON.getURL(1) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -275,7 +281,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel02(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(2) != null)
+        if (currentJSON.getURL(2) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -284,7 +290,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel03(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(3) != null)
+        if (currentJSON.getURL(3) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -293,7 +299,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel04(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(4) != null)
+        if (currentJSON.getURL(4) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -303,7 +309,7 @@ public class NewsController implements Initializable {
 
     public void openLabel05(MouseEvent mouseEvent) {
 
-        if (currentJSON.getImgURL(5) != null)
+        if (currentJSON.getURL(5) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -312,7 +318,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel06(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(6) != null)
+        if (currentJSON.getURL(6) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -321,7 +327,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel07(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(7) != null)
+        if (currentJSON.getURL(7) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -330,7 +336,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel08(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(8) != null)
+        if (currentJSON.getURL(8) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -339,7 +345,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel09(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(9) != null)
+        if (currentJSON.getURL(9) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -348,7 +354,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel10(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(10) != null)
+        if (currentJSON.getURL(10) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -357,7 +363,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel11(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(11) != null)
+        if (currentJSON.getURL(11) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -366,7 +372,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel12(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(12) != null)
+        if (currentJSON.getURL(12) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -375,7 +381,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel13(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(13) != null)
+        if (currentJSON.getURL(13) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -384,7 +390,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel14(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(14) != null)
+        if (currentJSON.getURL(14) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -393,7 +399,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel15(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(15) != null)
+        if (currentJSON.getURL(15) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -402,7 +408,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel16(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(16) != null)
+        if (currentJSON.getURL(16) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -411,7 +417,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel17(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(17) != null)
+        if (currentJSON.getURL(17) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -420,7 +426,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel18(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(18) != null)
+        if (currentJSON.getURL(18) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
@@ -429,7 +435,7 @@ public class NewsController implements Initializable {
     }
 
     public void openLabel19(MouseEvent mouseEvent) {
-        if (currentJSON.getImgURL(19) != null)
+        if (currentJSON.getURL(19) != null)
         {
             newsWebView.setVisible(true);
             WebEngine engine = newsWebView.getEngine();
