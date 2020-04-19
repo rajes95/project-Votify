@@ -25,18 +25,23 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
-
+/**
+ * Controller for the News page of the app. Handles all clicks on the page and displays newsPage.fxml
+ */
 public class NewsController implements Initializable {
+    // Common button menu on the left side of every page
     public VBox sideMenu;
     public Button homeButton;
     public Button pollButton;
     public Button newsButton;
 
+    // News page specific button
     public WebView newsWebView;
     public Button toggleWebView;
 
     public Label newsTitle;
 
+    // Images and captions for each of the 20 news stories
     public ImageView news00;
     public ImageView news01;
     public ImageView news02;
@@ -78,9 +83,11 @@ public class NewsController implements Initializable {
     public Label label18;
     public Label label19;
 
+    // Arrays to store all of the above buttons and labels
     private ImageView[] newsButtons = new ImageView[20];
     private Label[] newsLabels = new Label[20];
 
+    // JSONs for each search term that can be loaded on click
     private newsApiJson generalElection = null;
     private newsApiJson joeBiden = null;
     private newsApiJson donaldTrump = null;
@@ -89,6 +96,11 @@ public class NewsController implements Initializable {
 
     private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
+    /**
+     * Changes the window to the home page on click from the news page
+     * @param actionEvent Mouse click on Home button
+     * @throws IOException if the homePage.fxml file cannot load
+     */
     public void homeClick(ActionEvent actionEvent) throws IOException {
 
 
@@ -102,6 +114,11 @@ public class NewsController implements Initializable {
         window.show();
     }
 
+    /**
+     * Changes the window to the poll page on click from the news page
+     * @param actionEvent Mouse click on the Latest Polls button
+     * @throws IOException if the pollPage.fxml file cannot load
+     */
     public void pollClick(ActionEvent actionEvent) throws IOException {
 
 
@@ -115,7 +132,11 @@ public class NewsController implements Initializable {
         window.show();
     }
 
-
+    /**
+     * Reloads the news page on click from the news page
+     * @param actionEvent Mouse click on the News button
+     * @throws IOException if the newsPage.fxml file cannot be loaded
+     */
     public void newsClick(ActionEvent actionEvent) throws IOException {
 
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("newsPage.fxml"));
@@ -128,6 +149,9 @@ public class NewsController implements Initializable {
         window.show();
     }
 
+    /**
+     * Fills the newsButtons and newsLabels arrays with the individual buttons
+     */
     private void initializeNewsButtonsArray()
     {
         newsButtons[0] = news00;
@@ -172,6 +196,10 @@ public class NewsController implements Initializable {
         newsLabels[19] = label19;
     }
 
+    /**
+     * Helper function that fills the individual news buttons and labels with information from the current JSON
+     * Sets the button text and image, and sets visibility on if the button is available
+     */
     private void updateNews()
     {
         for (int i = 0; i < newsButtons.length; i++)
@@ -199,6 +227,12 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Creates a newsApiJson for each of the three default search terms and initializes all of the buttons
+     * Defaults to generalElection as the search term
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         newsWebView.setVisible(false);
@@ -218,7 +252,10 @@ public class NewsController implements Initializable {
         updateNews();
     }
 
-
+    /**
+     * Toggles the visibility of the webView on mouse click
+     * @param mouseEvent on click
+     */
     public void toggleWebview(MouseEvent mouseEvent) {
 
         if (newsWebView.isVisible()) {
@@ -230,6 +267,10 @@ public class NewsController implements Initializable {
 
     }
 
+    /**
+     * Changes currentJSON to general election if it isn't already and loads general election news
+     * @param mouseEvent on click
+     */
     public void loadGeneralNews(MouseEvent mouseEvent) {
 
         if (currentJSON != generalElection)
@@ -240,7 +281,10 @@ public class NewsController implements Initializable {
         }
     }
 
-
+    /**
+     * Changes the currentJSON to joe biden if it isn't already and loads joe biden news
+     * @param mouseEvent on click
+     */
     public void loadBidenNews(MouseEvent mouseEvent)
     {
         if (currentJSON != joeBiden)
@@ -251,6 +295,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Changes the currentJSON to donald trump if it isn't already and loads trump news
+     * @param mouseEvent
+     */
     public void loadTrumpNews(MouseEvent mouseEvent)
     {
         if (currentJSON != donaldTrump)
@@ -262,6 +310,10 @@ public class NewsController implements Initializable {
 
     }
 
+    /**
+     * Loads the webpage of the news article on button 0
+     * @param mouseEvent click on button 0
+     */
     public void openLabel00(MouseEvent mouseEvent) {
         if (currentJSON.getURL(0) != null)
         {
@@ -271,6 +323,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 1
+     * @param mouseEvent click on button 1
+     */
     public void openLabel01(MouseEvent mouseEvent) {
         if (currentJSON.getURL(1) != null)
         {
@@ -280,6 +336,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 2
+     * @param mouseEvent click on button 2
+     */
     public void openLabel02(MouseEvent mouseEvent) {
         if (currentJSON.getURL(2) != null)
         {
@@ -289,6 +349,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 3
+     * @param mouseEvent click on button 3
+     */
     public void openLabel03(MouseEvent mouseEvent) {
         if (currentJSON.getURL(3) != null)
         {
@@ -298,6 +362,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 4
+     * @param mouseEvent click on button 4
+     */
     public void openLabel04(MouseEvent mouseEvent) {
         if (currentJSON.getURL(4) != null)
         {
@@ -307,6 +375,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 5
+     * @param mouseEvent click on button 5
+     */
     public void openLabel05(MouseEvent mouseEvent) {
 
         if (currentJSON.getURL(5) != null)
@@ -317,6 +389,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 6
+     * @param mouseEvent click on button 6
+     */
     public void openLabel06(MouseEvent mouseEvent) {
         if (currentJSON.getURL(6) != null)
         {
@@ -326,6 +402,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 7
+     * @param mouseEvent click on button 7
+     */
     public void openLabel07(MouseEvent mouseEvent) {
         if (currentJSON.getURL(7) != null)
         {
@@ -335,6 +415,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 8
+     * @param mouseEvent click on button 8
+     */
     public void openLabel08(MouseEvent mouseEvent) {
         if (currentJSON.getURL(8) != null)
         {
@@ -344,6 +428,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 9
+     * @param mouseEvent click on button 9
+     */
     public void openLabel09(MouseEvent mouseEvent) {
         if (currentJSON.getURL(9) != null)
         {
@@ -353,6 +441,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 10
+     * @param mouseEvent click on button 10
+     */
     public void openLabel10(MouseEvent mouseEvent) {
         if (currentJSON.getURL(10) != null)
         {
@@ -362,6 +454,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 11
+     * @param mouseEvent click on button 11
+     */
     public void openLabel11(MouseEvent mouseEvent) {
         if (currentJSON.getURL(11) != null)
         {
@@ -371,6 +467,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 12
+     * @param mouseEvent click on button 12
+     */
     public void openLabel12(MouseEvent mouseEvent) {
         if (currentJSON.getURL(12) != null)
         {
@@ -380,6 +480,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 13
+     * @param mouseEvent click on button 13
+     */
     public void openLabel13(MouseEvent mouseEvent) {
         if (currentJSON.getURL(13) != null)
         {
@@ -389,6 +493,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 14
+     * @param mouseEvent click on button 14
+     */
     public void openLabel14(MouseEvent mouseEvent) {
         if (currentJSON.getURL(14) != null)
         {
@@ -398,6 +506,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 15
+     * @param mouseEvent click on button 15
+     */
     public void openLabel15(MouseEvent mouseEvent) {
         if (currentJSON.getURL(15) != null)
         {
@@ -407,6 +519,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 16
+     * @param mouseEvent click on button 16
+     */
     public void openLabel16(MouseEvent mouseEvent) {
         if (currentJSON.getURL(16) != null)
         {
@@ -416,6 +532,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 17
+     * @param mouseEvent click on button 17
+     */
     public void openLabel17(MouseEvent mouseEvent) {
         if (currentJSON.getURL(17) != null)
         {
@@ -425,6 +545,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 18
+     * @param mouseEvent click on button 18
+     */
     public void openLabel18(MouseEvent mouseEvent) {
         if (currentJSON.getURL(18) != null)
         {
@@ -434,6 +558,10 @@ public class NewsController implements Initializable {
         }
     }
 
+    /**
+     * Loads the webpage of the news article on button 19
+     * @param mouseEvent click on button 19
+     */
     public void openLabel19(MouseEvent mouseEvent) {
         if (currentJSON.getURL(19) != null)
         {

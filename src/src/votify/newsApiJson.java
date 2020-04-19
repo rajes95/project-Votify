@@ -91,8 +91,15 @@ public class newsApiJson
 		}
 	}
 
+	/**
+	 * Constructor for the newsApiJson that searches the given term in the api for the day prior
+	 * @param searchTerm String search term part of URL used in the API
+	 * @throws IOException if the API cannot be reached
+	 * @throws JSONException if there is a problem with JSON processing
+	 */
 	public newsApiJson(String searchTerm) throws IOException, JSONException
 	{
+		// Format yesterday's date for the API URL
 		Date currentDate = new Date();
 		Calendar c = Calendar.getInstance();
 		c.setTime(currentDate);
@@ -112,6 +119,7 @@ public class newsApiJson
 		jsonObj = readJsonFromUrl(apiURL);
 		jsonArr = (JSONArray) jsonObj.get("articles");
 
+		// Lists to store all the characteristics of the news articles
 		imgURLArray = new String[jsonArr.length()];
 		urlArray = new String[jsonArr.length()];
 		titleArray = new String[jsonArr.length()];
@@ -147,7 +155,12 @@ public class newsApiJson
 		}
 	}
 
-
+	/**
+	 * Helper function to read the whole JSON as a string to be formatted later
+	 * @param rd Reader for the API URL input stream
+	 * @return String of the JSON
+	 * @throws IOException if the reader cannot connect
+	 */
 	private static String readAll(Reader rd) throws IOException
 	{
 		StringBuilder sb = new StringBuilder();
@@ -159,6 +172,13 @@ public class newsApiJson
 		return sb.toString();
 	}
 
+	/**
+	 * Helper function to create a JSONObject from the formatted API URL
+	 * @param url String formatted API URL with the correct search term
+	 * @return JSONObject of the URL from the news API
+	 * @throws IOException if the input stream or reader cannot connect to the URL
+	 * @throws JSONException if there is a problem with JSON processing
+	 */
 	private static JSONObject readJsonFromUrl(String url) throws IOException, JSONException
 	{
 		InputStream is = new URL(url).openStream();

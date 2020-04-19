@@ -6,6 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Main class to start the application. Opens to the home page using homePage.fxml
+ */
 public class Main extends Application {
 
 
@@ -14,6 +17,7 @@ public class Main extends Application {
 
         Parent root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
         primaryStage.setTitle("Votify");
+        // Sets the scene size and directs it to the fxml
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
 
