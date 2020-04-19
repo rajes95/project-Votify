@@ -44,22 +44,51 @@ public class newsApiJson
 
 	public String getURL(int index)
 	{
-		return urlArray[index];
+		if (index < urlArray.length)
+		{
+			return urlArray[index];
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 	public String getImgURL(int index)
 	{
-		return imgURLArray[index];
+		if (index < imgURLArray.length)
+		{
+			return imgURLArray[index];
+		}
+		else
+		{
+			return null;
+		}
+
 	}
 
 	public String getTitle(int index)
 	{
-		return titleArray[index];
+		if (index < titleArray.length)
+		{
+			return titleArray[index];
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 	public String getSource(int index)
 	{
-		return source[index];
+		if (index < source.length)
+		{
+			return source[index];
+		}
+		else
+		{
+			return null;
+		}
 	}
 
 	public newsApiJson(String searchTerm) throws IOException, JSONException
