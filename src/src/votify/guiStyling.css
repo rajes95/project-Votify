@@ -12,6 +12,11 @@
     -fx-font-family: Geneva;
     -fx-font-size: 22;
 }
+
+#toggleWebView {
+    -fx-font-size: 12;
+}
+
 .outline.label .text {
     -fx-fill: white;
     -fx-stroke: black;
