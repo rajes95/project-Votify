@@ -42,6 +42,11 @@ public class newsApiJson
 	private String[] titleArray = null;
 	private String[] source = null;
 
+	/**
+	 * Getter for a URL from the URL Array at the specified index
+	 * @param index int index in array
+	 * @return String version of URL or null if unavailable
+	 */
 	public String getURL(int index)
 	{
 		if (index < urlArray.length)
@@ -54,6 +59,11 @@ public class newsApiJson
 		}
 	}
 
+	/**
+	 * Getter for an Image URL from the imageURL Array at the specified index
+	 * @param index int index in array
+	 * @return String version of Image URL or null if unavailable
+	 */
 	public String getImgURL(int index)
 	{
 		if (index < imgURLArray.length)
@@ -67,6 +77,11 @@ public class newsApiJson
 
 	}
 
+	/**
+	 * Getter for a title from the title Array at the specified index
+	 * @param index int index in array
+	 * @return String version of the news title or null if unavailable
+	 */
 	public String getTitle(int index)
 	{
 		if (index < titleArray.length)
@@ -79,6 +94,11 @@ public class newsApiJson
 		}
 	}
 
+	/**
+	 * Getter for a source from the source Array at the specified index
+	 * @param index int index in array
+	 * @return String version of source or null if unavailable
+	 */
 	public String getSource(int index)
 	{
 		if (index < source.length)
