@@ -95,7 +95,7 @@ public class PollController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         WebEngine engine = pollView.getEngine();
-        engine.load("https://www.realclearpolitics.com/epolls/2020/president/National.html");
+        engine.load("https://www.realclearpolitics.com/epolls/2020/president/us/general_election_trump_vs_biden-6247.html");
     }
 
 }
