@@ -18,7 +18,9 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
         primaryStage.setTitle("Votify");
         // Sets the scene size and directs it to the fxml
-        primaryStage.setScene(new Scene(root, 600, 400));
+        Scene scene = new Scene(root, 1200, 800);
+        primaryStage.setScene(scene);
+        scene.getStylesheets().add(Controller.class.getResource("guiStyling.css").toExternalForm());
         primaryStage.show();
 
     }

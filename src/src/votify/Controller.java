@@ -1,5 +1,7 @@
 package votify;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -36,6 +38,8 @@ public class Controller implements Initializable
     public ImageView candidateImage;
     public ImageView ballotImage;
     public Label titleLabel;
+    // List for the dropdown menu
+    ObservableList<String> cBoxList = FXCollections.observableArrayList("More coming soon!");
 
     /**
      * Initializes the javafx homepage
@@ -44,7 +48,8 @@ public class Controller implements Initializable
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        
+        electionMenu.setItems(cBoxList); // Adds to the dropdown menu
+        titleLabel.getStyleClass().add("outline"); // Allows for outlined text for readability
     }
 
     /**
@@ -62,6 +67,7 @@ public class Controller implements Initializable
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
+        tableViewScene.getStylesheets().add(Controller.class.getResource("guiStyling.css").toExternalForm());
         window.show();
     }
 
@@ -71,8 +77,6 @@ public class Controller implements Initializable
      * @throws IOException if the pollPage.fxml file cannot load
      */
     public void pollClick(ActionEvent actionEvent) throws IOException {
-
-
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("pollPage.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
@@ -80,6 +84,7 @@ public class Controller implements Initializable
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
+        tableViewScene.getStylesheets().add(Controller.class.getResource("guiStyling.css").toExternalForm());
         window.show();
     }
 
@@ -97,6 +102,7 @@ public class Controller implements Initializable
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
+        tableViewScene.getStylesheets().add(Controller.class.getResource("guiStyling.css").toExternalForm());
         window.show();
     }
 }

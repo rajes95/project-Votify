@@ -111,6 +111,7 @@ public class NewsController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
+        tableViewScene.getStylesheets().add(Controller.class.getResource("guiStyling.css").toExternalForm());
         window.show();
     }
 
@@ -129,6 +130,7 @@ public class NewsController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
+        tableViewScene.getStylesheets().add(Controller.class.getResource("guiStyling.css").toExternalForm());
         window.show();
     }
 
@@ -146,6 +148,7 @@ public class NewsController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
+        tableViewScene.getStylesheets().add(Controller.class.getResource("guiStyling.css").toExternalForm());
         window.show();
     }
 

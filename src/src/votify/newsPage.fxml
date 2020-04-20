@@ -7,7 +7,9 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="votify.NewsController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="votify.NewsController">
+    <!--Background image region. Sizing done in stylesheet-->
+    <Region opacity="0.6" fx:id="backgroundRegion" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
     <!--Common button menu on the left hand side of the page-->
     <VBox fx:id="sideMenu" alignment="CENTER" layoutX="24.0" layoutY="119.0" prefHeight="200.0" prefWidth="137.0">
         <padding>

@@ -40,13 +40,14 @@ public class PollController implements Initializable {
      * @throws IOException if the sample.fxml file cannot load
      */
     public void homeClick(ActionEvent actionEvent) throws IOException {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("homePage.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
 
         //This line gets the Stage information
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
+        tableViewScene.getStylesheets().add(Controller.class.getResource("guiStyling.css").toExternalForm());
         window.show();
     }
 
@@ -63,6 +64,7 @@ public class PollController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
+        tableViewScene.getStylesheets().add(Controller.class.getResource("guiStyling.css").toExternalForm());
         window.show();
     }
 
@@ -80,6 +82,7 @@ public class PollController implements Initializable {
         Stage window = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(tableViewScene);
+        tableViewScene.getStylesheets().add(Controller.class.getResource("guiStyling.css").toExternalForm());
         window.show();
     }
 
@@ -93,9 +96,6 @@ public class PollController implements Initializable {
 
         WebEngine engine = pollView.getEngine();
         engine.load("https://www.realclearpolitics.com/epolls/2020/president/National.html");
-
-
-
     }
 
 }
