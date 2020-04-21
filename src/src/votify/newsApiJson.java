@@ -74,7 +74,6 @@ public class newsApiJson
 		{
 			return null;
 		}
-
 	}
 
 	/**

@@ -1,0 +1,54 @@
+#backgroundRegion {
+    -fx-background-image: url("../images/flag.jpg");
+    -fx-background-size: cover;
+}
+
+#titleLabel {
+    -fx-font-family: Geneva;
+    -fx-font-size: 40;
+}
+
+#welcomeLabel {
+    -fx-font-family: Geneva;
+    -fx-font-size: 22;
+}
+
+#toggleWebView {
+    -fx-font-size: 12;
+}
+
+.outline.label .text {
+    -fx-fill: white;
+    -fx-stroke: black;
+    -fx-stroke-width: 2px;
+}
+
+.button {
+    -fx-text-fill: #000000;
+    -fx-font-family: Geneva;
+    -fx-font-weight: bolder;
+    -fx-background-color: linear-gradient(whitesmoke, lightslategrey);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(lightslategray, whitesmoke);
+}
+
+.button:pressed {
+    -fx-background-color: slategrey;
+}
+
+.combo-box {
+    -fx-fill: lightslategray;
+    -fx-font-family: Geneva;
+}
+
+.combo-box.list-cell {
+    -fx-fill: lightslategray;
+}
+
+.label:hover {
+    -fx-opacity: 0.5;
+}
+
