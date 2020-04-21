@@ -1,9 +1,0 @@
-<application>
-  <component name="FileTypeManager" version="17">
-    <extensionMap>
-      <mapping pattern="readme" type="PLAIN_TEXT" />
-      <mapping pattern="csvTest" type="PLAIN_TEXT" />
-      <mapping pattern="problem3" type="PLAIN_TEXT" />
-    </extensionMap>
-  </component>
-</application>
