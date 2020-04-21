@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--fxml file for Poll page generated with Scene Builder-->
+
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.web.*?>
 
-<AnchorPane fx:id="pollPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="votify.PollController">
-   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="238.0" layoutY="24.0" prefHeight="27.0" prefWidth="134.0" text="Votify" textAlignment="CENTER">
-      <font>
-         <Font name="Chalkboard SE Light" size="29.0" />
-      </font>
-   </Label>
+<AnchorPane fx:id="pollPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="votify.PollController">
+   <!--Background image region. Sizing done in stylesheet-->
+   <Region fx:id="backgroundRegion" opacity="0.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   <!--Title label-->
+   <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="538.0" layoutY="24.0" prefHeight="27.0" prefWidth="134.0" text="Votify" textAlignment="CENTER" />
+   <!--Common button menu on left side of window-->
    <VBox fx:id="sideMenu" alignment="CENTER" layoutX="24.0" layoutY="120.0" prefHeight="200.0" prefWidth="137.0">
       <padding>
          <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
@@ -34,5 +35,6 @@
          </Button>
       </children>
    </VBox>
-   <WebView fx:id="pollView" layoutX="161.0" layoutY="70.0" prefHeight="309.0" prefWidth="421.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="70.0" />
+   <!--Webpage view of the polling information-->
+   <WebView fx:id="pollView" layoutX="161.0" layoutY="70.0" prefHeight="695.0" prefWidth="1003.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="70.0" />
 </AnchorPane>
