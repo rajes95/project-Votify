@@ -17,3 +17,5 @@ As of now, Votify is focused on the General Presidential Election but will event
 https://pages.github.ccs.neu.edu/2020SPCS5500SV/project-Votify/ 
 # Communication Plan
 * Found in docs folder
+# Final Presentation
+https://docs.google.com/presentation/d/1pIZu4rqMbQzcSlccEfVt1o9WHxAGz5xfUsH8dNW2sZg/edit?usp=sharing
