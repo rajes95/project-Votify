@@ -28,5 +28,5 @@ Documents: 11/15
 - in open-source, documentation is the most important feature. But there were only javadocs and system generated documents.
 - no documents on any feature of the project.
 - no documents on how to run the project locally.
-- no videos or gifs to show how the project can work if someone wants to contribute to this open source, they would not have any idea on how to do so.
+- no videos, gifs, or instructions to show how the project works. If someone wants to contribute to this open source, they would not have any idea on how to do so.
 
