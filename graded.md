@@ -22,7 +22,7 @@ Methodology: 14/15
 - The pull requests had no labels on them.
 
 Code: 9/10
-- missing most inner documentation
+- missing most inner documentation and testing
 
 Documents: 11/15
 - in open-source, documentation is the most important feature. But there were only javadocs and system generated documents.
