@@ -5,8 +5,8 @@ Project Votify is an endeavor to create a desktop application which will allow n
 
 As of now, Votify is focused on the General Presidential Election but will eventually cover broader federal, state and local elections. We also expect to eventually expand to mobile apps and/or a website.
 # Team Members
-* Rajesh Sakhamuru - rajes95 - Primary Customer Representative
-* Luna Szymanski - luna - Alternate Customer Representative
+* Rajesh Sakhamuru - rajes95 - Primary Project Lead
+* Luna Szymanski - luna - Alternate Project Lead
 * Zachary Rooney - rooneyz
 * Rohan Subramaniam - subraman22
 # Repository Folder Information
