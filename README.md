@@ -1,4 +1,4 @@
-# project-Votify
+# Project Votify
 Repository for project Votify - a news app to keep voters informed
 # Summary
 Project Votify is an endeavor to create a desktop application which will allow new voters or otherwise apolitical persons to access current news articles and polling data from across the political spectrum. The availabile news and polls should be sortable by left/center/right ideology so that it is accessible to people from variable political and socio-economic backgrounds. Our goal is to allow users to quickly get informed about major US elections, while not being limited to a specific political ideology. 
